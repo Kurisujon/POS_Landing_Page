@@ -1,0 +1,7 @@
+@import "tailwindcss";
+:root{--anim-ease:cubic-bezier(0.22,1,0.36,1);--anim-duration:.65s}
+.pre-animate{opacity:0;transform:translateY(16px);will-change:opacity,transform}
+.animate-fade-in-up{animation:fadeInUp var(--anim-duration) var(--anim-ease) forwards}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+.img-hover{transition:transform .6s var(--anim-ease),filter .6s var(--anim-ease),box-shadow .6s var(--anim-ease);will-change:transform,filter,box-shadow;transform:translateZ(0);backface-visibility:hidden;transform-origin:center}
+.img-hover:hover{transform:translateY(-6px) translateZ(0) scale(1.03);filter:brightness(1.05) saturate(1.03);box-shadow:0 14px 36px rgba(0,0,0,.16)}
