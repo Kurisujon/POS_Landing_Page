@@ -1,7 +1,132 @@
 @import "tailwindcss";
-:root{--anim-ease:cubic-bezier(0.22,1,0.36,1);--anim-duration:.65s}
-.pre-animate{opacity:0;transform:translateY(16px);will-change:opacity,transform}
-.animate-fade-in-up{animation:fadeInUp var(--anim-duration) var(--anim-ease) forwards}
-@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
-.img-hover{transition:transform .6s var(--anim-ease),filter .6s var(--anim-ease),box-shadow .6s var(--anim-ease);will-change:transform,filter,box-shadow;transform:translateZ(0);backface-visibility:hidden;transform-origin:center}
-.img-hover:hover{transform:translateY(-6px) translateZ(0) scale(1.03);filter:brightness(1.05) saturate(1.03);box-shadow:0 14px 36px rgba(0,0,0,.16)}
+
+/* Theme colors */
+:root {
+    --primary-from: #0fb7c9;
+    --primary-to: #0d8da3;
+    --anim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --anim-duration: 0.65s;
+}
+
+.theme-gradient {
+    background-image: linear-gradient(135deg, var(--primary-from), var(--primary-to));
+}
+
+.btn-action {
+    background-image: linear-gradient(135deg, var(--primary-from), var(--primary-to));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(15, 183, 201, 0.2);
+    transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+    opacity: 0.95;
+}
+
+.btn-primary {
+    background-image: linear-gradient(135deg, var(--primary-from), var(--primary-to));
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(15, 183, 201, 0.3);
+    transition: opacity 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+}
+
+.pre-animate {
+    opacity: 0;
+    transform: translateY(16px);
+    will-change: opacity, transform;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp var(--anim-duration) var(--anim-ease) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img-hover {
+    transition: transform 0.6s var(--anim-ease), filter 0.6s var(--anim-ease), box-shadow 0.6s var(--anim-ease);
+    will-change: transform, filter, box-shadow;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transform-origin: center;
+    border-radius: 0.5rem;
+}
+
+.img-hover:hover {
+    transform: translateY(-6px) translateZ(0) scale(1.03);
+    filter: brightness(1.05) saturate(1.03);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+}
+
+.landing-card {
+    transition: transform 300ms var(--anim-ease), box-shadow 300ms var(--anim-ease), border-color 300ms var(--anim-ease);
+    will-change: transform;
+    border-radius: 1rem;
+    overflow: visible;
+    border: 2px solid #e5e7eb;
+}
+
+.landing-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px -15px rgba(13, 141, 163, 0.6);
+    border-color: rgba(13, 141, 163, 0.4);
+}
+
+.landing-card:hover .img-hover {
+    transform: scale(1.08);
+}
+
+/* Learn More Button Styles */
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 300ms var(--anim-ease);
+    align-self: flex-start;
+}
+
+.learn-more-btn:hover {
+    border-color: rgba(13, 141, 163, 0.3);
+    background-color: rgba(13, 141, 163, 0.05);
+    padding-right: 1.5rem;
+}
+
+.learn-more-btn:hover svg {
+    transform: translateX(6px);
+}
+
+.learn-more-btn svg {
+    transition: transform 300ms var(--anim-ease);
+}
+
+.media-hover {
+    transition: transform 260ms var(--anim-ease);
+    will-change: transform;
+}
+
+.media-hover:hover {
+    transform: translateY(-2px) scale(1.01);
+}
